@@ -1,0 +1,122 @@
+:root{
+    --background-color: #000000;
+    --button-bg: #d8c8fd;
+    --button-hover-bg: #8485af;
+    --antiflash-white: #efefef;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    height: 100vh;
+    background-color: linear-gradient(#d8c8fd, #1a304d);
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+  }
+  
+  
+  /* Container Styles */
+  .container {
+    width: 40vh;
+    min-height: 60vh;
+    margin: auto;
+    background: var(--antiflash-white);
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 3vh;
+    border-radius: 1.2vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Header */
+  .container h1 {
+    font-size: 3vh;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .container h2 {
+    font-size: 2.2vh;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  /* List Items (Quiz Options) */
+  .container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 5.5vh;
+    padding: 1.5vh;
+    border: solid 0.1vh #1a304d;
+    border-radius: 0.6vh;
+    margin-bottom: 1.5vh;
+    font-size: 1.8vh;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .container button {
+    width: 100%;
+    height: 6vh;
+    background: var(--button-bg);
+    font-size: 2.2vh;
+    font-weight: bold;
+    border-radius: 0.6vh;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5vh;
+    border: solid 0.1vh #1a304d;
+  }
+  
+  .container button:hover {
+    background: var(--button-hover-bg);
+    transform: scale(1.05);
+  }
+
+  .container .timer {
+    font-size: 1.6vh;
+    font-weight: bold;
+    color: var(--background-color);
+  }
+  
+  .container .score {
+    font-size: 2vh;
+    margin-bottom: 16vh;
+  }
+  
+
+    /* Media Mobile */
+    @media (max-width: 768px) {
+      .container {
+        width: 80vw;
+      }
+    }
+
+    /* Media tablet */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .container {
+        width: 60vw;
+      }
+    }

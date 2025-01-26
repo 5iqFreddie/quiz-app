@@ -1,0 +1,44 @@
+{
+    "questions": [
+        {
+            "Question": "Which Programming Language is commonly used for Web Development?",
+            "a": "PyGyat",
+            "b": "Pizza",
+            "c": "JavaScript",
+            "d": "Dog",
+            "answer": "c"
+        },
+        {
+            "Question": "Which device is used to move your pointer on the screen?",
+            "a": "Mouse",
+            "b": "Monitor",
+            "c": "CPU",
+            "d": "None of the above",
+            "answer": "a"
+        },
+        {
+            "Question": "Which protocol ensures secure data transmission?",
+            "a": "HTTP",
+            "b": "HTTPS",
+            "c": "SMTP",
+            "d": "FTP",
+            "answer": "b"
+        },
+        {
+            "Question": "Which of the following is a programming language?",
+            "a": "HTML",
+            "b": "CSS",
+            "c": "Python",
+            "d": "All of the above",
+            "answer": "c"
+        },
+        {
+            "Question": "What format is primarily used for structured data interchange?",
+            "a": "HTML",
+            "b": "MP4",
+            "c": "CSS",
+            "d": "XML",
+            "answer": "d"
+        }
+    ]
+}
