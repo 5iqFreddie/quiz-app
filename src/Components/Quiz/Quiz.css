@@ -5,7 +5,6 @@
     --antiflash-white: #efefef;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -38,11 +37,7 @@
   
   .start-screen h1{
     padding-bottom: 15vh;
-    text-decoration: underline;
   }
-
-
-
 
   .container h1 {
     font-size: 3vh;
