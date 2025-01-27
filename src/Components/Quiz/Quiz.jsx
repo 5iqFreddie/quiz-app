@@ -11,6 +11,7 @@ const Quiz = () => {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [quizStarted, setQuizStarted] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false); // New state to disable buttons
 
   useEffect(() => {
     if (quizStarted) {
@@ -21,7 +22,6 @@ const Quiz = () => {
           setCurrentQuestion(data.questions[index]);
         })
         .catch((error) => console.error('Error fetching quiz data:', error));
-
 
       const interval = setInterval(() => {
         if (timer > 0 && !answerSelected && !gameOver) {
@@ -48,6 +48,7 @@ const Quiz = () => {
       setTimer(10); 
       setAnswerSelected(false);
       setIsCorrect(null);
+      setIsButtonDisabled(false); // Re-enable the buttons when moving to the next question
     } else {
       setGameOver(true);
     }
@@ -67,6 +68,7 @@ const Quiz = () => {
     }
 
     setAnswerSelected(true);
+    setIsButtonDisabled(true);
 
     setTimeout(() => {
       nextQuestion();
@@ -80,6 +82,7 @@ const Quiz = () => {
     setTimer(10);
     setAnswerSelected(false);
     setIsCorrect(null);
+    setIsButtonDisabled(false);
   };
 
   const startQuiz = () => {
@@ -101,16 +104,36 @@ const Quiz = () => {
             <h2>{currentQuestion.Question}</h2>
             <ul>
               <li>
-                <button onClick={() => checkAnswer('a')}>{currentQuestion.a}</button>
+                <button
+                  onClick={() => checkAnswer('a')}
+                  disabled={isButtonDisabled}
+                >
+                  {currentQuestion.a}
+                </button>
               </li>
               <li>
-                <button onClick={() => checkAnswer('b')}>{currentQuestion.b}</button>
+                <button
+                  onClick={() => checkAnswer('b')}
+                  disabled={isButtonDisabled}
+                >
+                  {currentQuestion.b}
+                </button>
               </li>
               <li>
-                <button onClick={() => checkAnswer('c')}>{currentQuestion.c}</button>
+                <button
+                  onClick={() => checkAnswer('c')}
+                  disabled={isButtonDisabled}
+                >
+                  {currentQuestion.c}
+                </button>
               </li>
               <li>
-                <button onClick={() => checkAnswer('d')}>{currentQuestion.d}</button>
+                <button
+                  onClick={() => checkAnswer('d')}
+                  disabled={isButtonDisabled}
+                >
+                  {currentQuestion.d}
+                </button>
               </li>
             </ul>
 
@@ -124,7 +147,6 @@ const Quiz = () => {
             <div className="timer">Time left: {timer}s⏲️</div>
           </>
         ) : (
-          // Display score and "Play Again" button after game over
           <div>
             <h1>{score === quizData.length ? 'Well played!🥳' : 'Game over!🤖'}</h1>
             <p className='score'>
