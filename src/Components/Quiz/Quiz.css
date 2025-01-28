@@ -13,12 +13,12 @@
   
   body {
     height: 100vh;
-    background-color: linear-gradient(#d8c8fd, #1a304d);
     font-family: sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #000000;
+    background-image: linear-gradient(#d8c8fd, #1a304d);
   }
   
   .container {
